@@ -568,5 +568,16 @@ a:focus {
   color: #292929;
 }
 
+.image_section {
+  text-align: center; /* 이미지를 중앙에 배치 */
+  padding: 50px 0; /* 상단과 하단에 여백 추가 */
+}
+
+.image_section img {
+  max-width: 100%; /* 이미지가 컨테이너를 넘지 않도록 함 */
+  height: auto; /* 이미지 비율 유지 */
+}
+
+
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
