@@ -22,6 +22,7 @@ $con->set_charset('utf8mb4');
 // POST 메소드로 전송된 데이터를 받습니다.
 $username = isset($_POST['username']) ? $con->real_escape_string(trim($_POST['username'])) : null;
 $password = isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : null;
+$dog_name = isset($_POST['dog_name']) ? $con->real_escape_string(trim($_POST['dog_name'])) : null;
 $dog_breed = isset($_POST['dog_breed']) ? $con->real_escape_string(trim($_POST['dog_breed'])) : null;
 $dog_age = isset($_POST['dog_age']) ? intval($_POST['dog_age']) : null;
 $dog_weight = isset($_POST['dog_weight']) ? doubleval($_POST['dog_weight']) : null;
@@ -37,7 +38,7 @@ if ($username === null || $password === null || $dog_age === null || $dog_weight
 }
 
 // SQL 쿼리 준비
-$sql = "INSERT INTO usertbl (username, password, dog_breed, dog_age, dog_weight, neutered, region) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO usertbl (username, password, dog_name, dog_breed, dog_age, dog_weight, neutered, region) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Prepared statement 준비
 $stmt = $con->prepare($sql);
@@ -46,7 +47,7 @@ if (!$stmt) {
 }
 
 // 변수 바인딩
-if (!$stmt->bind_param("sssiids", $username, $password, $dog_breed, $dog_age, $dog_weight, $neutered, $region)) {
+if (!$stmt->bind_param("ssssiids", $username, $password, $dog_name, $dog_breed, $dog_age, $dog_weight, $neutered, $region)) {
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
