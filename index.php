@@ -77,12 +77,20 @@
 
               <div class="ml-auto"> <!-- ml-auto 클래스를 사용하여 오른쪽 정렬 -->
             <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
-                <!-- 로그인한 사용자에게 보이는 내용 -->
-                <span class="navbar-text">
-                  <?php echo htmlspecialchars($_SESSION['username']); ?>님 환영합니다.
-                </span>
-                <a href="logout.php" class="btn btn-outline-success my-2 my-sm-0 ml-2" type="button">로그아웃</a>
-                <a href="user_info_edit.php" class="btn btn-outline-secondary btn-custom my-2 my-sm-0 ml-2">회원정보수정</a>
+    <!-- 로그인한 사용자에게 보이는 내용 -->
+    <span class="navbar-text">
+      <?php 
+      // 강아지 이름이 설정되어 있을 경우 환영 메시지에 포함
+      if(isset($_SESSION['dog_name'])) {
+          echo htmlspecialchars($_SESSION['dog_name']) . "님 환영합니다.";
+      } else {
+          // 강아지 이름이 설정되지 않았을 경우 기본 메시지
+          echo "환영합니다.";
+      }
+      ?>
+    </span>
+    <a href="logout.php" class="btn btn-outline-success my-2 my-sm-0 ml-2" type="button">로그아웃</a>
+    <a href="user_info_edit.php" class="btn btn-outline-secondary btn-custom my-2 my-sm-0 ml-2">회원정보수정</a>
 
 
             <?php else: ?>
