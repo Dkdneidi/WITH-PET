@@ -1,11 +1,11 @@
 <?php
-$host = 'localhost'; // 데이터베이스 호스트
-$dbname = 'pet'; // 데이터베이스 이름
-$user = 'root'; // 데이터베이스 사용자명
-$pass = '1234'; // 사용자 비밀번호
+$hostname = "localhost";
+$database = "pet";
+$username = "root";
+$password = "1234";
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+$dsn = "mysql:host=$hostname;dbname=$database;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -13,7 +13,9 @@ $options = [
 ];
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $username, $password, $options);
+    // 연결 성공 메시지를 여기에 추가합니다.
+    echo "연결 성공!";
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }

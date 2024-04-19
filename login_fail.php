@@ -46,25 +46,25 @@
               <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="service.html">CAFE </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pet.html">HOSPITAL</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="clinic.html">RESTARUANT</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">SALON</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="buy.html">CULTURE</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="LOGIN.html">LOGIN</a>
+                  <a class="nav-link" href="cafe-region.html">CAFE </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="haspital-region.php">HOSPITAL</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="shop-region.html">SHOP</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="service-region.html">SERVICE</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="culture-region.html">CULTURE</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="LOGIN.html">LOGIN</a>
                   </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">

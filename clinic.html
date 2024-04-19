@@ -35,7 +35,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img src="images/logo.png" alt="">
             <span>
               Petology
@@ -50,7 +50,7 @@
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="service.html">service </a>
@@ -68,6 +68,32 @@
                   <a class="nav-link" href="buy.html"> Buy now </a>
                 </li>
               </ul>
+              <div class="ml-auto"> <!-- ml-auto 클래스를 사용하여 오른쪽 정렬 -->
+                <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+        <!-- 로그인한 사용자에게 보이는 내용 -->
+        <span class="navbar-text">
+          <?php 
+          // 강아지 이름이 설정되어 있을 경우 환영 메시지에 포함
+          if(isset($_SESSION['dog_name'])) {
+              echo htmlspecialchars($_SESSION['dog_name']) . "님 환영합니다.";
+          } else {
+              // 강아지 이름이 설정되지 않았을 경우 기본 메시지
+              echo "환영합니다.";
+          }
+          ?>
+        </span>
+        <a href="logout.php" class="btn btn-outline-success my-2 my-sm-0 ml-2" type="button">로그아웃</a>
+        <a href="user_info_edit.php" class="btn btn-outline-secondary btn-custom my-2 my-sm-0 ml-2">회원정보수정</a>
+    
+    
+                <?php else: ?>
+                
+                    <!-- 로그인하지 않은 사용자에게 보이는 내용 -->
+                    <a href="LOGIN.html" class="btn btn-outline-success my-2 my-sm-0" type="button">로그인</a>
+                <?php endif; ?>
+            </div>
+        </div>
+
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
